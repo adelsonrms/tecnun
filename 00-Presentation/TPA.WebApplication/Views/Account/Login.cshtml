@@ -1,4 +1,5 @@
-﻿@using TPA.Presentation.Models
+﻿@using TPA.Infra.Services
+@using TPA.Presentation.Models
 @model LoginViewModel
 @{
     ViewBag.Title = "Efetuar login";
@@ -68,7 +69,20 @@
                 </section>
                 
                 <section id="socialLoginForm">
-                    @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                    
+                    @if (DevServices.IsDevEnv())
+                    {
+                        <div class="row">
+                            <div class="col-sm-12 alert alert-warning alert-dismissable">
+                                <a class="close" data-dismiss="alert"> × </a>
+                                <span class="glyphicon glyphicon-warning-sign"></span><strong> Atenção!</strong> Modo de DESENVOLVIMENTO <br> Opções de Login Office 365 estão desabilitadas.
+                            </div>
+                        </div>
+                    }
+
+
+                    @*@Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel {ReturnUrl = ViewBag.ReturnUrl})*@
+
                 </section>
                 
                 <div class="form-group">
