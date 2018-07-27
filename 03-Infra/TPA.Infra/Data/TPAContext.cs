@@ -56,8 +56,8 @@ namespace TPA.Infra.Data
         /// </summary>
         public TPAContext() : base(ConfigServices.GetConnectionString())
         {
-            Database.SetInitializer<TPAContext>(new MigrateDatabaseToLatestVersion<TPAContext, TPA.Infra.Migrations.Configuration>());
-            //Database.SetInitializer<TPAContext>(null);
+            //Database.SetInitializer<TPAContext>(new MigrateDatabaseToLatestVersion<TPAContext, TPA.Infra.Migrations.Configuration>());
+            Database.SetInitializer<TPAContext>(null);
         }
 
 
