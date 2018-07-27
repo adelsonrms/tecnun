@@ -1,0 +1,49 @@
+﻿@model TPA.ViewModel.FichaCadastralViewModel
+
+<div id="ResumoUsuario" class="container-fluid">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img alt="..." class="media-object" src="~/Content/Images/funcionarios/@{ @Html.ValueFor(m => m.EmailProfissional); }.jpg"/>
+                    </a>
+                </div>
+                <div class="media-body azul">
+                    <p id="cargo"><strong>@Html.ValueFor(m => m.Contrato.Cargo.Nome)</strong></p>
+                    <p id="idade">@Html.ValueFor(m => m.Idade)</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 cor_azul">
+            <div class="row">
+                <strong>
+                    <div class="col-xs-6">
+                        <div class="row" style="text-align: right; padding:5px">Matricula&nbsp;:&nbsp;</div>
+                        <div class="row" style="text-align: right; padding:5px">Admissão&nbsp;:&nbsp;</div>
+                        <div class="row" style="text-align: right; padding:5px">Status&nbsp;:&nbsp;</div>
+                        <div class="row" style="text-align: right; padding:5px">Tempo de Casa&nbsp;:&nbsp;</div>
+                    </div>
+                </strong>
+
+                <div class="col-xs-6" >
+
+                    <div class="row" style="text-align: left; padding:5px">
+                        @Html.ValueFor(m => m.Matricula)
+                    </div>
+                    <div class="row" style="text-align: left; padding:5px">
+                        @Html.ValueFor(m => m.Contrato.DataAdmissao)
+                    </div>
+                    <div class="row" style="text-align: left; padding:5px">
+                        @Html.ValueFor(m => m.Contrato.StatusContrato)
+                    </div>
+                    <div class="row" style="text-align: left; padding:5px">
+                        @Html.ValueFor(m => m.Contrato.TempoDeCasa)
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
